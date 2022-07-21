@@ -1,0 +1,68 @@
+<!--Created Sujith P D -->
+
+<head>
+  <script src="/static/vendor/jquery/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/static/vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/static/vendor/jquery/jquery.validate.js"></script>
+  <script src="/static/js/custom/add_user_token.js"></script>
+</head>
+<style>
+  .error {
+    color: red;
+  }
+</style>
+<div id="content">
+  <div class="inner">
+    <div class="form-group" id="link" style="font-size: 15px">
+      <a href="/dashboard">Home</a> &raquo;<a href="/userToken">User Token</a> &raquo;
+      Create
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <h5> User Token</h5>
+      </div>
+    </div>
+    <form id="addUserTokenFormId">
+      <div class="row col-md-12">
+        <div class="col-md-3">
+          <label>User Name</label>
+          <input class="col-md-12" id="addUserName" name="addUserName" type="text">
+        </div>
+        <div class="col-md-3">
+          <label>Mobile Number</label>
+          <input class="col-md-12" id="addMobile" name="addMobile" type="number">
+        </div>
+      </div><br>
+      <div class="col-lg-6 pull-right" style="padding-top:50px">
+        <button class="btn btn-success" id="addButton">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="tokenCopyModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="width: 75%;">
+      <!-- Modal Header -->
+      <div class="modal-header" id="modal-header" style="background-color: #d9d5d5;">
+        <h5 class="modal-title" id="modal-title" style="padding-left: 37%;">
+          <b>SHARE APP</b>
+        </h5>
+        <button type="button" class="close" id= "closemodal" data-dismiss="modal">
+          ×
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body" id="model-contents" style="height:117px ;"><br>
+        <b>YOUR APP SHARING TOKEN</b> <br>
+        Copy and paste the token below in to email and app.
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer" id="modal-footer" style="justify-content: flex-start;">
+        <input type="text" id="userTokenData" size="40" style="margin-right: 0.0rem;border-radius: 10px 0px 0px 10px;height: 42px;background-color: #d9d5d5;">
+        <button onclick="copyToken()" style="margin-left: 0.0rem;width: 17%;background-color:#f5a005d4;color: white;border-radius:0px 10px 10px 0px;height: 42px;">COPY</button>
+      </div>
+    </div>
+  </div>

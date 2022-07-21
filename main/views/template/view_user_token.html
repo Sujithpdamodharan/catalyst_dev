@@ -1,0 +1,102 @@
+<head>
+  <script src="/static/vendor/jquery/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/static/vendor/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/static/plugins/newdatatables/jquery.dataTables.min.js"></script>
+  <link href="/static/plugins/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="/static/plugins/css/buttons.dataTables.min.css" rel="stylesheet" />
+  <!-- Custom scripts for all pages-->
+  <script src="/static/js/sb-admin.min.js"></script>
+  <!-- Custom scripts for this page-->
+  <script src="/static/js/sb-admin-datatables.min.js"></script>
+  <script src="/static/js/custom/view_user_token.js"></script>
+</head>
+<div class="card mb-3">
+
+  <!-- Example DataTables Card-->
+  <div class="card mb-3">
+    <div class="form-group" id="link" style="font-size: 15px">
+      <a href="/dashboard">Home</a> &raquo; User Token
+    </div>
+    <div class="card-header">
+      <i class="fa fa-table"></i> User Token
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="user_token_table" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Phone Number</th>
+              <th>Acess Token</th>
+              <th>Expiry Date</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    Modal content
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Are you sure want to recall?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="recallOk" style="background-color: #cc0000;
+            color: white;">Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel" style="background-color: #cc0000;
+            color: white;">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+<div class="modal fade" id="tokenCopyModal" role="dialog">
+  <div class="modal-dialog">
+    Modal content
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Are you sure want to recall?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="recallOk" style="background-color: #cc0000;
+            color: white;">Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel" style="background-color: #cc0000;
+            color: white;">No</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="modal fade" id="tokenCopyModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="width: 75%;">
+      <!-- Modal Header -->
+      <div class="modal-header" id="modal-header" style="background-color: #d9d5d5;">
+        <h5 class="modal-title" id="modal-title" style="padding-left: 37%;">
+          <b>SHARE APP</b>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal">
+          ×
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body" id="model-contents" style="height:117px ;"><br>
+        <b>YOUR APP SHARING TOKEN</b> <br>
+        Copy and paste the token below in to email and app.
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer" id="modal-footer" style="justify-content: flex-start;">
+        <input type="text" id="userTokenData" size="40" style="margin-right: 0.0rem;border-radius: 10px 0px 0px 10px;height: 42px;background-color: #d9d5d5;">
+        <button onclick="copyToken()" style="margin-left: 0.0rem;width: 17%;background-color:#f5a005d4;color: white;border-radius:0px 10px 10px 0px;height: 42px;">COPY</button>
+      </div>
+    </div>
+  </div>
